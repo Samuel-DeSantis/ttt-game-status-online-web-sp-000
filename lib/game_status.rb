@@ -22,6 +22,10 @@ def board_empty?(board)
   return board_empty
 end
 
+def spaces?(board)
+  spaces = board.any? { |element| element === " " || element === " "}
+end
+
 def won?(board)
   return false if (board_empty?(board) === true)
 
@@ -38,11 +42,11 @@ def won?(board)
 end
 
 def full?(board)
-  spaces = board.any? { |element| element === " " || element === " "}
-  return !spaces
+  return !(spaces?(board))
 end
 
 def draw?
+  return
 end
 
 def over?
