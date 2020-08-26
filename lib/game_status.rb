@@ -57,9 +57,7 @@ def draw?(board)
     return false
   when false
     return true # draw
-
   end
-
 end
 
 def over?
