@@ -23,7 +23,7 @@ def board_empty?(board)
 end
 
 def spaces?(board)
-  spaces = board.any? { |element| element === " " || element === " "}
+  return board.any? { |element| element === " " || element === " "}
 end
 
 def won?(board)
@@ -46,7 +46,19 @@ def full?(board)
 end
 
 def draw?
-  return
+  return false if spaces?(board)
+  case won?(board)
+  when [0, 1, 2] # won in first row
+    return false
+  when [0, 4, 8] # won in L diagonal
+    return false
+  when [2, 4, 6] # won in R diagonal
+    #TODO
+  else
+  end
+    [0, 4, 8],
+    [2, 4, 6],
+    
 end
 
 def over?
