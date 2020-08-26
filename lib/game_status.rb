@@ -17,9 +17,14 @@ WIN_COMBINATIONS = [
   [2, 4, 6],
 ]
 
-def won?(board)
+def board_empty?(board)
   board_empty = board.all? { |element| element === " " || element === ""}
-  return false if (board_empty === true)
+  return board_empty
+end
+
+def won?(board)
+  
+  return false if (board_empty?(board) === true)
 
   WIN_COMBINATIONS.each do |win_combination|
     if (board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X")
