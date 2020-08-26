@@ -60,7 +60,10 @@ def draw?(board)
   end
 end
 
-def over?
+def over?(board)
+  return true if draw(board)
+  return true unless won?(board) === false
+  return false if spaces?(board)
 end
 
 def winner
