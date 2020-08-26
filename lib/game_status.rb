@@ -67,7 +67,7 @@ def over?(board)
     return false
   unless won?(board) === false
   end
-    
+
   #return true if draw?(board)
   #return true unless won?(board) === false
   #return false if spaces?(board)
