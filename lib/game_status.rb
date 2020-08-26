@@ -42,7 +42,7 @@ def won?(board)
 end
 
 def full?(board)
-  return !(spaces?(board))
+  return !spaces?(board)
 end
 
 def draw?
