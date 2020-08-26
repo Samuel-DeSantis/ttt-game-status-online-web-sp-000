@@ -65,6 +65,7 @@ def over?(board)
     return true
   elsif spaces?(board)
     return false
+  end
   unless won?(board) === false
   end
 
