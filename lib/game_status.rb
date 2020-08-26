@@ -46,7 +46,7 @@ def full?(board)
 end
 
 def draw?(board)
-  return false if spaces?(board)
+  return false if spaces?(board) # game in progressas
 
   case won?(board)
   when [0, 1, 2] # won in first row
@@ -56,7 +56,7 @@ def draw?(board)
   when [2, 4, 6] # won in R diagonal
     return false
   when false
-    return true
+    return true # draw
   end
 
 end
