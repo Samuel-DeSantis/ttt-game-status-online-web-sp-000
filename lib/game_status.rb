@@ -17,6 +17,9 @@ WIN_COMBINATIONS = [
   [2, 4, 6],
 ]
 
+#       0    1    2    3    4    5   6    7    8
+# X = [" ", " ", " ", " ", " ", " "," ", " ", " "]
+
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
     case board[win_combination[0]] && board[win_combination[1]] && board[win_combination[2]]
@@ -25,13 +28,13 @@ def won?(board)
       when "O"
         return win_combination
       else
-        return false
+        next
     end
   end
 end
 
 def full?(board)
-  board.find { |item| item === " " || item === ""} != nil ? true : false
+  board.find { |item| item === " " || item === ""} == " " || "" ? true : false
 end
 
 def draw?
