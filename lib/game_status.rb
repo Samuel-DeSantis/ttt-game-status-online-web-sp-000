@@ -30,8 +30,8 @@ def won?(board)
       else
         next
     end
-    return false # board not empty and no winning combinations
   end
+  return false # board not empty and no winning combinations
 end
 
 def full?(board)
