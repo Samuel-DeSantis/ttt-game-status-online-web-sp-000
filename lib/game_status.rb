@@ -47,7 +47,7 @@ end
 
 def draw?(board)
   return false if spaces?(board)
-  
+
   case won?(board)
   when [0, 1, 2] # won in first row
     return false
