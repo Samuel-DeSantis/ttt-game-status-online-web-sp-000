@@ -66,7 +66,11 @@ def over?(board)
   return false if spaces?(board)
 end
 
-def winner
+def winner(board)
+  return nil if draw?(board)
+
+  winning_combo = won?(board)
+  return board[winning_combo[0]]
 end
 
 # need at least 5 turns to have a winning combo
