@@ -29,16 +29,8 @@ def won?(board)
     else
       next
     end
-#    case board[win_combination[0]] && board[win_combination[1]] && board[win_combination[2]]
-#      when "X"
-#        return win_combination
-#      when "O"
-#        return win_combination
-#      else
-#        next
-#    end
   end
-  #return false # board not empty and no winning combinations
+  return false # board not empty and no winning combinations
 end
 
 def full?(board)
