@@ -61,17 +61,9 @@ def draw?(board)
 end
 
 def over?(board)
-  if draw?(board)
-    return true
-  elsif spaces?(board)
-    return false
-  end
-  unless won?(board) === false
-  end
-
-  #return true if draw?(board)
-  #return true unless won?(board) === false
-  #return false if spaces?(board)
+  return true if draw?(board)
+  return true unless won?(board) === false
+  return false if spaces?(board)
 end
 
 def winner
