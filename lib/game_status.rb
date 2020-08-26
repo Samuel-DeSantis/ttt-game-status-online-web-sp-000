@@ -23,7 +23,6 @@ def board_empty?(board)
 end
 
 def won?(board)
-
   return false if (board_empty?(board) === true)
 
   WIN_COMBINATIONS.each do |win_combination|
@@ -39,7 +38,8 @@ def won?(board)
 end
 
 def full?(board)
-  board.find { |item| item === " " || item === ""} == " " || "" ? true : false
+  spaces = board.any? { |element| element === " " || element === " "}
+  return !spaces
 end
 
 def draw?
