@@ -38,7 +38,7 @@ def won?(board)
       next
     end
   end
-  return false # board not empty and no winning combinations
+  return false # Draw : board not empty and no winning combinations
 end
 
 def full?(board)
