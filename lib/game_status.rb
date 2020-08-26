@@ -23,7 +23,7 @@ def board_empty?(board)
 end
 
 def won?(board)
-  
+
   return false if (board_empty?(board) === true)
 
   WIN_COMBINATIONS.each do |win_combination|
