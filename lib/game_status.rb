@@ -8,21 +8,28 @@ WIN_COMBINATIONS = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
-
+# Vertical Wins
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-
+# Diagonal Wins
   [0, 4, 8],
   [2, 4, 6],
 ]
-# Vertical Wins
-# Diagonal Wins
+
 def won?(board)
   board_empty = board.all? { |element| element === " " || element === ""}
   return false if (board_empty === true)
 
   WIN_COMBINATIONS.each do |win_combination|
+    if (board[win_combination[0]] && board[win_combination[1]] && board[win_combination[2]] === "X")
+      return win_combination
+    elsif (board[win_combination[0]] && board[win_combination[1]] && board[win_combination[2]] === "O")
+      return win_combination
+    else
+      next
+    end
+    =begin
     case board[win_combination[0]] && board[win_combination[1]] && board[win_combination[2]]
       when "X"
         return win_combination
@@ -31,8 +38,9 @@ def won?(board)
       else
         next
     end
+    =end
   end
-  return false # board not empty and no winning combinations
+  #return false # board not empty and no winning combinations
 end
 
 def full?(board)
