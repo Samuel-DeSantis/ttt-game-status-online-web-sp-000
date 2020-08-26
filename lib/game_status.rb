@@ -17,16 +17,9 @@ WIN_COMBINATIONS = [
   [2, 4, 6],
 ]
 
-# need at least 5 turns to have a winning combo
-#       0    1    2    3    4    5   6    7    8
-# X = [" ", " ", " ", " ", " ", " "," ", " ", " "]
-# 0 | 1 | 2
-# 3 | 4 | 5
-# 6 | 7 | 8
-
 def won?(board)
   board_empty = board.all? { |element| element === " " || element === ""}
-  false if (board_empty === true)
+  return false if (board_empty === true)
 
   WIN_COMBINATIONS.each do |win_combination|
     case board[win_combination[0]] && board[win_combination[1]] && board[win_combination[2]]
@@ -37,7 +30,7 @@ def won?(board)
       else
         next
     end
-
+    return false # board not empty and no winning combinations
   end
 end
 
@@ -53,3 +46,10 @@ end
 
 def winner
 end
+
+# need at least 5 turns to have a winning combo
+#       0    1    2    3    4    5   6    7    8
+# X = [" ", " ", " ", " ", " ", " "," ", " ", " "]
+# 0 | 1 | 2
+# 3 | 4 | 5
+# 6 | 7 | 8
