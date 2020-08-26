@@ -47,14 +47,16 @@ end
 
 def draw?(board)
   return false if spaces?(board)
+  
   case won?(board)
   when [0, 1, 2] # won in first row
     return false
   when [0, 4, 8] # won in L diagonal
     return false
   when [2, 4, 6] # won in R diagonal
-    #TODO
-  else
+    return false
+  when false
+    return true
   end
 
 end
