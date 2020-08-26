@@ -45,7 +45,7 @@ def full?(board)
   return !spaces?(board)
 end
 
-def draw?
+def draw?(board)
   return false if spaces?(board)
   case won?(board)
   when [0, 1, 2] # won in first row
